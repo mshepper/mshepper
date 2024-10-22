@@ -7,16 +7,12 @@ function filterData() {
 }
 async function fetchData() {
   try {
-      const response = await fetch('https://compute.samford.edu/zohauth/clients/datajson');
-      const data = await response.json();
-      const startDate = new Date('2023-01-01'); // Replace with your start date
-      const endDate = new Date('2023-12-31'); // Replace with your end date
-      populateTable(data, startDate, endDate);
-  } catch (error) {
-      console.error('Error fetching data:', error);
-  }
+    const response = await fetch('https://compute.samford.edu/zohauth/clients/datajson');
+    const data = await response.json();
+    populateTable(data);
+} catch (error) {
+    console.error('Error fetching data:', error);}
 }
-
 function populateTable(data, startDate, endDate) {
   const tableBody = document.getElementById('data-table').getElementsByTagName('tbody')[0];
   tableBody.innerHTML = ''; // Clear existing table rows
