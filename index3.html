@@ -156,7 +156,7 @@
             document.querySelectorAll('th').forEach(th => {
                 th.classList.remove('sorted-asc', 'sorted-desc');
             });
-            const sortedHeader = document.querySelector(`th:contains(${field})`);
+            const sortedHeader = document.querySelector(`th:contains("${field}")`);
             sortedHeader.classList.add(sortOrder === 'asc' ? 'sorted-asc' : 'sorted-desc');
 
             populateTable(data);
